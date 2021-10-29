@@ -61,14 +61,14 @@ router.post('/details', (req, res, next) => {
 router.get('/edit/:id', (req, res, next) => {
   let id = req.params.id;
   console.log(Book.findById(id));
-  
+
   Book.findById(id, (err, bookToEdit) => {
     if (err) {
         console.log(err);
         res.end(err);    
     } else {
         //show the edit view
-        res.render('books/edit', {title: 'Edit Book', book: bookToEdit})
+        res.render('books/edit', {title: 'Edit Book', books: bookToEdit})
     }
 })
     /*****************
@@ -114,7 +114,7 @@ router.get('/delete/:id', (req, res, next) => {
           res.end(err);    
       } else {
           // refresh the book list
-          res.redirect('/book');
+          res.redirect('/books');
       }
   });
     /*****************

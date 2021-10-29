@@ -36,11 +36,11 @@ router.get('/details', (req, res, next) => {
 // POST process the Book Details page and create a new Book - CREATE
 router.post('/details', (req, res, next) => {
   let newBook = new Book({
-    "Title": req.body.Title,
-    "Description": req.body.Description,
-    "Price": req.body.Price,
-    "Author": req.body.Author,
-    "Genre": req.body.Genre
+    "Title": req.body.title,
+    "Description": req.body.description,
+    "Price": req.body.price,
+    "Author": req.body.author,
+    "Genre": req.body.genre
   });
 
   Book.create(newBook, (err,Book) =>{
@@ -60,6 +60,8 @@ router.post('/details', (req, res, next) => {
 // GET the Book Details page in order to edit an existing Book
 router.get('/edit/:id', (req, res, next) => {
   let id = req.params.id;
+  console.log(Book.findById(id));
+  
   Book.findById(id, (err, bookToEdit) => {
     if (err) {
         console.log(err);
@@ -79,11 +81,11 @@ router.post('/edit/:id', (req, res, next) => {
   let id = req.params.id;
   let updatedBook = Book({
     "_id": id,
-    "Title": req.body.Title,
-    "Description": req.body.Description,
-    "Price": req.body.Price,
-    "Author": req.body.Author,
-    "Genre": req.body.Genre
+    "Title": req.body.title,
+    "Description": req.body.description,
+    "Price": req.body.price,
+    "Author": req.body.author,
+    "Genre": req.body.genre
 });
 
 Book.updateOne({_id: id}, updatedBook, (err) => {

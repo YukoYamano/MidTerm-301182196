@@ -1,3 +1,11 @@
+/*
+File name: This is the server setting up page,
+Author's name: Yuko Yamano,
+StudentID: 301182196, 
+Web App name: Midterm-BookList App
+*/
+
+
 let app = require('./server/config/app');
 let debug = require('debug')('comp308-w2019-midterm:server');
 let http = require('http');

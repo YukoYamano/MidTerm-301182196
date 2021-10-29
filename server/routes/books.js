@@ -1,3 +1,10 @@
+/*
+File name: bookroute file,
+Author's name: Yuko Yamano,
+StudentID: 301182196, 
+Web App name: Midterm-BookList App
+*/
+
 // modules required for routing
 let express = require('express');
 let router = express.Router();
@@ -24,16 +31,15 @@ router.get('/', (req, res, next) => {
 });
 
 //  GET the Book Details page in order to add a new Book
+//This is the function to just show the page.
 router.get('/details', (req, res, next) => {
   res.render('books/details', {title: 'Add Book'});
 
-    /*****************
-     * ADDed CODE HERE (This is working)*
-     *****************/
 
 });
 
 // POST process the Book Details page and create a new Book - CREATE
+//This is the function to set a dynamic movement to add inputed data into database that connects with this site.
 router.post('/details', (req, res, next) => {
   let newBook = new Book({
     "Title": req.body.title,
@@ -53,7 +59,7 @@ router.post('/details', (req, res, next) => {
   }
   });
 
-  //here
+  
 
 });
 
@@ -71,9 +77,7 @@ router.get('/edit/:id', (req, res, next) => {
         res.render('books/edit', {title: 'Edit Book', books: bookToEdit})
     }
 })
-    /*****************
-     * ADDed CODE HERE *
-     *****************/
+   
 });
 
 // POST - process the information passed from the details form and update the document
@@ -98,9 +102,7 @@ Book.updateOne({_id: id}, updatedBook, (err) => {
   }
 });
 
-    /*****************
-     * ADDed CODE HERE *
-     *****************/
+  
 
 });
 
@@ -117,9 +119,7 @@ router.get('/delete/:id', (req, res, next) => {
           res.redirect('/books');
       }
   });
-    /*****************
-     * ADDed CODE HERE *
-     *****************/
+   
 });
 
 

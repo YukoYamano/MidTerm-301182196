@@ -1,3 +1,5 @@
+<!--This is the main book list page -->
+
 <% include ../partials/header.ejs %>
 
     <!-- MAIN CONTENT -->
@@ -5,9 +7,7 @@
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <h3>Favourite Books List </h3>
-          <!-- ------------------------ -->
-          <!-- FIX THE ADD BUTTON BELOW -->
-          <!-- ------------------------ -->
+         
           <a href="/books/details" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
           <br>
           <div class="table-responsive">
@@ -36,18 +36,13 @@
                    <a href="/books/edit/<%= books[count]._id %>" class="btn btn-primary">
                                 <i class="fas fa-pencil-alt"></i> Edit</a>
 
-                    <!-- ------------------------ -->
-                    <!-- ADD the EDIT BUTTON HERE -->
-                    <!-- ------------------------ -->
                   </td>
 
                   <td class="text-center">
                     <a href="/books/delete/<%= books[count]._id %>" class="btn btn-danger">
                       <i class="fas fa-trash-alt"></i>Delete</a>                    
 
-                    <!-- ------------------------ -->
-                    <!-- ADD the DELETE BUTTON HERE -->
-                    <!-- ------------------------ -->
+               
                   </td>
                 </tr>
                 <% } %>

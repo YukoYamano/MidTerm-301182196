@@ -53,9 +53,7 @@ router.post('/details', (req, res, next) => {
   }
   });
 
-    /*****************
-     * ADDed CODE HERE *
-     *****************/
+  //here
 
 });
 
